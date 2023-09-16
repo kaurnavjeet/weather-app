@@ -109,3 +109,72 @@ body {
 	transform: scaleX(1);
 	transition: 1s;
 }
+
+.weather-container {
+	max-width: 300px;
+	margin: 0 auto;
+	background-color: transparent;
+	padding: 20px;
+	border-radius: 5px;
+	text-align: center;
+	/* box-shadow: 0 0 10px rgb(172, 46, 172); */
+}
+
+.weather-container .underline {
+	position: absolute;
+	bottom: 4px;
+	left: -7px;
+	height: 2px;
+	width: 110%;
+	background-color: rgb(172, 46, 172);
+	transform: scaleX(0);
+}
+
+.weather-container .sideline {
+	position: absolute;
+	bottom: 15px;
+	right: 18px;
+	height: 2px;
+	width: 18%;
+	background-color: rgb(172, 46, 172);
+	transform: scaleX(0);
+	rotate: 90deg;
+}
+
+.weather-container .upperline {
+	position: absolute;
+	top: -200px;
+	left: -50px;
+	height: 2px;
+	width: 150%;
+	background-color: rgb(172, 46, 172);
+	/* transform: scaleX(0); */
+}
+
+.weather-container .line {
+	position: relative;
+	bottom: 17px;
+	left: 178px;
+	height: 2px;
+	width: 18%;
+	background-color: rgb(172, 46, 172);
+	transform: scaleX(0);
+	rotate: 90deg;
+}
+
+.weather-container h2 {
+	color: rgb(172, 46, 172);
+}
+
+.weather-data {
+	margin-top: 20px;
+}
+
+p strong {
+	color: rgb(172, 46, 172);
+}
+
+p {
+	margin: 8px 0;
+	color: rgb(255, 255, 255);
+}
