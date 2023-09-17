@@ -1,9 +1,5 @@
 const weatherDIV = document.querySelector(".weather-container");
 
-if (document.getElementById("city").textContent !== "City") {
-	weatherDIV.style.display = "block";
-}
-
 // connect to WeatherAPI.com
 const apiURL = "https://weatherapi-com.p.rapidapi.com/current.json";
 
@@ -12,6 +8,7 @@ const headers = {
 	"X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
 };
 
+//Fetch and populate data in HTML
 async function getWeather(cityValue) {
 	try {
 		const queryParams = new URLSearchParams({ q: cityValue });
@@ -27,18 +24,19 @@ async function getWeather(cityValue) {
 			data.current.temp_f + "°F";
 		document.getElementById("weather").textContent =
 			data.current.condition.text;
+		console.log(data.current.condition.icon);
 		document.getElementById("humidity").textContent =
 			data.current.humidity + "%";
 
-		weatherDIV.style.display = "block";
+		weatherDIV.classList.add("visible");
 	} catch (err) {
 		console.log(err);
 	}
 }
 
+//Get input and call async function
 document.addEventListener("DOMContentLoaded", () => {
 	const city = document.querySelector("input");
-	weatherDIV.style.display = "none";
 
 	if (city) {
 		city.addEventListener("keydown", (event) => {
